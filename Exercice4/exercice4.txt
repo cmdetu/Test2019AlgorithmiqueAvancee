@@ -1,0 +1,57 @@
+4.1 et 4.2 (justification)
+	Valeur du paramètre : 0
+	Dans Matrix2, il faut tester pour chaque noeud s'il se trouve bien
+	sur la ligne recherchée. Dans notre cas, cela représente 2 tests de plus que pour Matrix3
+	De plus, l'implémentation proposée à l'exercice précédent permet permet de ne pas parcourir
+	toute la liste mais nécessite de vérifier si la l'indice de ligne actuel est inférieur ou
+	égal à l'indice de la ligne recherchée, ce qui ajoute dans notre cas 3
+
+	Pour cet appel, Matrix 3 effectue moins d'opérations
+
+	Valeur du paramètre : 1
+
+	Matrix3 permet de traiter uniquement la ligne souhaitée grâce à l'accès direct
+	dans le tableau. pour Matrix2, en plus des différences vues dans le cas où le
+	paramètre serait 0, il faut parcourir la liste jusqu'a trouver les éléments de la ligne voulue.
+	Ici, on vérifie donc les 2 premier éléments (ligne 0) puis le 3ème (ligne 5)
+	avant de sortir de la méthode. Matrix3 traite un liste de 2 éléments (tête et queue fictives),
+	sans tester les indices de ligne.
+
+	Matrix3 effectue moins d'opérations.
+
+4.3 et 4.4 (justification)
+	Valeur du paramètre : 8
+	Pour Matrix2, il faut parcourir la totalité de la liste et tester pour chaque élément
+	l'indice de colonne (ici on teste 4 noeuds et on parcours 5 noeuds : 4 + queue fictive).
+	Matrix3 doit parcourir les cases du tableau, ce qui donne lieu à 10 tests (indice i)
+	et vérifier que l'indice de la colonne actuelle est inférieur à l'indice de la colonne recherchée
+	(cela réduit le nombre d'éléments à traiter mais augmente le nombre de tests si la colonne
+	recherchée est à la fin des listes, ce qui est le cas ici).
+
+	Dans cette configuration, Matrix2 effectue moins d'opérations.	
+
+	Valeur du paramètre : 9
+	La situation est la même car Matrix2 n'effectuera pas plus d'opérations
+	alors que Matrix3 devra parcourir plus de noeuds pour atteindre les
+	queues des listes 0 et 9 (voir condition de continuation de la boucle for)
+	
+	Matrix2 effectue à nouveau moins d'opérations.
+
+4.5 et 4.6 (justification)
+	Valeur recherchée : 0, 0
+	Matrix2 doit tester l'indice de la ligne, ce qui n'est pas le cas de Matrix3.
+	Les boucles en elles mêmes effectuent le même nombre d'opérations.
+
+	C'est donc Matrix3 qui effectue moins d'opérations.
+	(pour cette valeur, la différence est faible car 1 seul noeud est parcouru).
+
+	Valeurs : 1, 1
+	Dans cette situation, Matrix2 effectue encore plus d'opérations car il faut
+	parcourir les 3 premiers noeuds avant de déterminer que (1, 1) vaut 0 (n'est pas
+	dans la matrice). Alors que Matrix3 n'entre pas dans la boucle (le premier noeud testé
+	est la queue fictive de la ligne 1, ce qui sort de la boucle).
+	
+	C'est donc Matrix3 qui effectue moins d'opérations.
+
+
+
