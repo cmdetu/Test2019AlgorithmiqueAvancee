@@ -12,7 +12,7 @@
 
 	Matrix3 permet de traiter uniquement la ligne souhaitée grâce à l'accès direct
 	dans le tableau. pour Matrix2, en plus des différences vues dans le cas où le
-	paramètre serait 0, il faut parcourir la liste jusqu'a trouver les éléments de la ligne voulue.
+	paramètre serait 0, il faut parcourir la liste jusqu'à trouver les éléments de la ligne voulue.
 	Ici, on vérifie donc les 2 premier éléments (ligne 0) puis le 3ème (ligne 5)
 	avant de sortir de la méthode. Matrix3 traite un liste de 2 éléments (tête et queue fictives) (la tête fictive n'est pas traitée),
 	sans tester les indices de ligne
@@ -34,7 +34,7 @@
 	La situation est la même car Matrix2 n'effectuera pas plus d'opérations
 	alors que Matrix3 devra parcourir plus de noeuds pour atteindre les
 	queues des listes 0 et 9 (voir condition de continuation de la boucle for)
-	
+
 	Matrix2 effectue à nouveau moins d'opérations
 
 4.5 et 4.6 (justification)
@@ -50,9 +50,9 @@
 	parcourir les 3 premiers noeuds avant de déterminer que (1, 1) vaut 0 (n'est pas
 	dans la matrice). Alors que Matrix3 n'entre pas dans la boucle (le premier noeud testé
 	est la queue fictive de la ligne 1, ce qui sort de la boucle)
-	
+
 	C'est donc Matrix3 qui effectue moins d'opérations
-	
+
 	Valeurs : 9, 9
 	Matrix2 doit parcourir touts les éléments non nuls de la liste avant de trouver
 	le noeud recherché. Matrix3 ne traite qu'un seul noeud (celui recherché) car elle ne
@@ -64,10 +64,9 @@
 	Nous aurions pu utiliser la structure de données suivante :
 		CList<std::pair<size_t, CList<pairColVal>>
 	Avec le premier élément de la paire qui stocke l'indice de ligne
-	et le second qui est une liste similaire à ce qui est utilisé pour Matrix3
-
+	et le second qui est une liste similaire à ce qui est utilisé pour Matrix3.
 	Grâce à cette structure, les lignes vides n'occupent plus de mémoire
-	inutiliment, le parcours des différentes lignes est plus rapide qu'avec Matrix3
+	inutilement, le parcours des différentes lignes est plus rapide qu'avec Matrix3
 	(car les lignes qui ne comportent pas de valeurs non nulles sont absentes de la matrice).
 	L'accès à une ligne ne se fait par directement comme avec Matrix3 mais est plus rapide qu'avec Matrix2
 	qui doit traiter tous les noeuds des lignes précédentes.
