@@ -9,7 +9,6 @@
 	Pour cet appel, Matrix 3 effectue moins d'opérations
 
 	Valeur du paramètre : 1
-
 	Matrix3 permet de traiter uniquement la ligne souhaitée grâce à l'accès direct
 	dans le tableau. pour Matrix2, en plus des différences vues dans le cas où le
 	paramètre serait 0, il faut parcourir la liste jusqu'à trouver les éléments de la ligne voulue.
@@ -65,8 +64,9 @@
 		CList<std::pair<size_t, CList<pairColVal>>
 	Avec le premier élément de la paire qui stocke l'indice de ligne
 	et le second qui est une liste similaire à ce qui est utilisé pour Matrix3.
-	Grâce à cette structure, les lignes vides n'occupent plus de mémoire
-	inutilement, le parcours des différentes lignes est plus rapide qu'avec Matrix3
+
+	Avec cette structure, les lignes vides n'occupent plus de mémoire inutilement,
+	le parcours des différentes lignes est plus rapide qu'avec Matrix3
 	(car les lignes qui ne comportent pas de valeurs non nulles sont absentes de la matrice).
-	L'accès à une ligne ne se fait par directement comme avec Matrix3 mais est plus rapide qu'avec Matrix2
+	L'accès à une ligne ne se fait par directement, comme avec Matrix3 mais est plus rapide qu'avec Matrix2
 	qui doit traiter tous les noeuds des lignes précédentes.
