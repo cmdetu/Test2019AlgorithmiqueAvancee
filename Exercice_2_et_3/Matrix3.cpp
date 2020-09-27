@@ -24,7 +24,7 @@ VInt Matrix3::getVectorAtCol(const unsigned& colNum) const
     return vec;
 }
 
-int Matrix3::getValue(const unsigned& lineNum, unsigned colNum) const
+int Matrix3::getValue(const unsigned& lineNum, const unsigned& colNum) const
 {
     for(shared_ptr<CNode<pairColVal>> ptr(matrix[lineNum].fictionalHead()->getNextNode()); ptr != matrix[lineNum].fictionalTail() && ptr->getData().first <= colNum; ptr = ptr->getNextNode())
         if(ptr->getData().first == colNum)

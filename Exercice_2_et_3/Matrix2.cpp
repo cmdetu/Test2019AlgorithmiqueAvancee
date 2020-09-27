@@ -2,7 +2,7 @@ VInt Matrix2::getVectorAtLine(const unsigned& lineNum) const
 {
     VInt vec(_size, 0);
     for(shared_ptr<CNode<triplet>> ptr(matrix.fictionalHead()->getNextNode());
-        ptr != matrix.fictionalTail() && ptr->getData().linenum <= line;
+        ptr != matrix.fictionalTail() && ptr->getData().lineNum <= lineNum;
         ptr = ptr->getNextNode())
     {
         if(ptr->getData().liNenum == lineNum)
@@ -36,5 +36,5 @@ int Matrix2::getValue(const unsigned& lineNum, const unsigned& colNum) const
 /*
 IL FAUT STOCKER _size DANS Matrix2 CAR EN L'ABSENCE D'ÉLÉMENTS NON NULS SUR LA
 DERNIÈRE COLONNE OU LA DERNIÈRE LIGNE, IL DEVIENT IMPOSSIBLE DE CONNAITRE
-LA TAILLE DE LA MATRICE (QUI EST INDISPENSABLE POUR LES MÉTHODES getVectorAtLine et getVectorAtCol).
+LA TAILLE DE LA MATRICE (QUI EST INDISPENSABLE POUR LES MÉTHODES getVectorAtLine ET getVectorAtCol).
 */
